@@ -48,7 +48,6 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-
       - name: Docker meta
         id: docker_action_meta
         uses: docker/metadata-action@v3
@@ -73,10 +72,6 @@ jobs:
           push: true
           tags: ${{ steps.docker_action_meta.outputs.tags }}
           labels: ${{ steps.docker_action_meta.outputs.labels }}
-          build-args: |
-            BASEIMAGE=${{ fromJSON(steps.docker_ort_meta.outputs.json).tags[0] }}
-          cache-from: type=registry,ref=${{ fromJSON(steps.docker_action_meta.outputs.json).tags[0] }}
-          cache-to: type=inline
 
       - name: Semantic Release
         uses: cycjimmy/semantic-release-action@v2.5.4
