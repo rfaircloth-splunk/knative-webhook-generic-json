@@ -7,7 +7,7 @@ spec:
   template:
     spec:
       containers:
-        - image: docker.io/{username}/helloworld-python
+        - image: ghcr.io/splunk/knative-webhook-generic-json
           env:
             - name: TARGET
               value: "Python Sample v1"
