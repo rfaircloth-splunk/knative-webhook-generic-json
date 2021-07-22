@@ -7,7 +7,7 @@ spec:
   template:
     spec:
       containers:
-        - image: ghcr.io/rfaircloth-splunk/knative-webhook-generic-json
+        - image: ghcr.io/rfaircloth-splunk/knative-webhook-generic-json:v
           env:
             - name: TARGET
               value: "Python Sample v1"
